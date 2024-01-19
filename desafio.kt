@@ -1,10 +1,31 @@
 // [Template no Kotlin Playground](https://pl.kotl.in/WcteahpyN)
 
-enum class Nivel { BASICO, INTERMEDIARIO, AVANÇADO }
+enum class State { Basic, Intermediate, Advanced }
+
+fun main() {
+    val state = State.Basic
+    val message = when (state)
+    {                     
+        State.Basic -> "Basic!"
+        State.Intermediate -> "Intermediate!"
+        State.Advanced -> "Advanced!" }
+ 
+    println(message)
+ 
+}
 
 class Usuario
 
-data class ConteudoEducacional(var nome: String, var duracao: Int = 20)
+data class EducationalContent(val name: String, val TimeStudying: Int) {          
+    override fun equals(other: Any?) =
+        other is EducationalContent && other.TimeStudying == this.TimeStudying             
+}
+fun main() {
+    val EducationalContent = EducationalContent("Philip", 24)
+    println(EducationalContent)                                          }
+
+
+
 
 data class Formacao(val nome: String, var conteudos: List<ConteudoEducacional>) {
 
